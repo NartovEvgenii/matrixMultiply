@@ -22,7 +22,6 @@ public class CompileColumnRunnable implements Runnable{
             for(int j = 0;j < matrixRepos.getMatrix1()[i].length;j++){            
                 valueCell += matrixRepos.getMatrix1()[i][j]*matrixRepos.getMatrix2()[j][j2];
             }
-            System.out.println("------------"+j2+"---------------");
             matrixRepos.setCellInResultmatrix(i, j2, valueCell);
         }
     }

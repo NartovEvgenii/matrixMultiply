@@ -1,9 +1,11 @@
 package matrixmultiply;
 
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -11,32 +13,7 @@ import static org.junit.Assert.*;
 
 
 public class MatrixMultiplyTest {
-    
-    @Test
-    public void testOneRowMatrix() {
-        System.out.println("test multiply");
-        double[][] matrix1 = {
-			{1,2,3}
-		};
-        double[][] matrix2 = {
-			{4},
-			{5},
-			{6}
-		};
-        double[][] result;
-        try {
-            result = MatrixMultiply.multiply(matrix1, matrix2);
-            for(int i=0;i<result.length;i++){
-                for(int j=0;j<result[0].length;j++){
-                System.out.print(result[i][j]+"  ");
-                }
-                System.out.println();
-            }
-        } catch (InterruptedException ex) {
-            Logger.getLogger(MatrixMultiplyTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
+       
     @Test
     public void testThreeMatrix() {
         System.out.println("test multiply");
@@ -50,15 +27,15 @@ public class MatrixMultiplyTest {
 			{2,1,1},
 			{1,3,2}
 		};
+        double[][] trueResult = {
+			{21.0,24.0,24.0},
+			{20.0,25.0,28.0},
+			{36.0,36.0,45.0}
+		};
         double[][] result;
         try {
             result = MatrixMultiply.multiply(matrix1, matrix2);
-            for(int i=0;i<result.length;i++){
-                for(int j=0;j<result[0].length;j++){
-                System.out.print(result[i][j]+"  ");
-                }
-                System.out.println();
-            }
+            Assert.assertArrayEquals(trueResult, result);
         } catch (InterruptedException ex) {
             Logger.getLogger(MatrixMultiplyTest.class.getName()).log(Level.SEVERE, null, ex);
         }
