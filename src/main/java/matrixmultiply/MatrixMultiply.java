@@ -9,19 +9,14 @@ public class MatrixMultiply {
             for(int j = 0;j < matrix2[0].length;j++){
                 Thread tr = new Thread(new CompileColumnRunnable(repos,j));
                 tr.start();
-                if(j == matrix2[0].length - 1){
-                    tr.join();
-                }
+                tr.join();
             }
         }else{
             for(int i = 0;i < matrix1.length;i++){
                 Thread tr = new Thread(new CompileRowRunnable(repos,i));
                 tr.start();
-                if(i == matrix1.length - 1){
-                    tr.join();
-                }
-            }
-            
+                tr.join();
+            }            
         }
         return repos.getResultmatrix();
     }

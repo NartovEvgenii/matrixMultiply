@@ -1,5 +1,8 @@
 package matrixmultiply;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 public class CompileColumnRunnable implements Runnable{
     

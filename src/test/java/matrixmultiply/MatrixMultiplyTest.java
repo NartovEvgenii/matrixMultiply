@@ -1,5 +1,6 @@
 package matrixmultiply;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,7 +34,7 @@ public class MatrixMultiplyTest {
 			{36.0,36.0,45.0}
 		};
         double[][] result;
-        try {
+        try {            
             result = MatrixMultiply.multiply(matrix1, matrix2);
             Assert.assertArrayEquals(trueResult, result);
         } catch (InterruptedException ex) {
